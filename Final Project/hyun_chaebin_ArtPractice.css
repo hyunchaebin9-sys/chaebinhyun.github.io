@@ -1,0 +1,172 @@
+/* ---------- Design tokens (from your style) ---------- */
+:root {
+  --gap: 18px;
+  --radius: 18px;
+  --shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --ink: #2c2c34;
+  --muted: #7d7f8c;
+  --accent: #00a2d4;
+  --accent-hover: #0082b1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);            /* matches your other pages */
+  color: var(--ink);
+  font-family: 'Inter', 'Poppins', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Header (kept your header font + link colors) ---------- */
+header h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  margin: 0;
+  font-size: 50pt;
+}
+header a {
+  text-decoration: none;
+  color: rgb(69, 156, 184);
+}
+.container {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding-left: 1%;
+  margin: 8px 0 0;
+  gap: 20px;
+}
+nav ul li {
+  font-family: 'Georgia', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+}
+nav ul li a {
+  color: #9fc9f0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f00;
+  border-color: #f00;
+}
+
+/* ---------- Optional search (kept your style, hidden by default) ---------- */
+input[type=text] {
+  width: 130px;
+  transition: width 0.4s ease-in-out;
+  border-radius: 30px;
+  position: absolute;
+  left: 0.5%;
+  font-family: 'Darumadrop One', cursive;
+  border: 1px solid #fff;
+  display: none; /* remove if you want it visible */
+}
+input[type=text]:focus { width: 100%; }
+
+/* ---------- Subnav chips (from your other page) ---------- */
+.subnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px var(--gap);
+}
+.chip {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  background: #f0f5ff;
+  transition: all 0.3s ease;
+}
+.chip:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Main / hero ---------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px var(--gap) 80px;
+}
+.hero { display: grid; gap: 10px; margin: 20px 0 30px; }
+.hero p { color: var(--muted); margin: 0; }
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* ---------- Masonry gallery (matches your media grid vibe) ---------- */
+.masonry {
+  column-count: 2;
+  column-gap: var(--gap);
+}
+@media (min-width: 700px)  { .masonry { column-count: 3; } }
+@media (min-width: 1050px) { .masonry { column-count: 4; } }
+
+.tile { break-inside: avoid; margin: 0 0 var(--gap); }
+
+.thumb {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
+  background: var(--card);
+}
+
+/* Demo placeholders (so you can “see the boxes” now) */
+.ph {
+  width: 100%;
+  aspect-ratio: 4/5;              /* default portrait-ish */
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #8cc8ff, #00a2d4);
+  letter-spacing: 0.5px;
+}
+.ph.tall { aspect-ratio: 3/5; }
+.ph.wide { aspect-ratio: 16/10; }
+
+/* When you swap in images later */
+.thumb img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.thumb:hover img { transform: scale(1.05); }
+
+/* ---------- Footer ---------- */
+footer {
+  margin: 60px 0 30px;
+  text-align: center;
+  color: var(--muted);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}

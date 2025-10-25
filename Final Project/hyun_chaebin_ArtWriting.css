@@ -1,0 +1,163 @@
+
+body{
+  background:#93CDCB;
+  margin:0;
+  color:#fff;
+  font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
+}
+header h1{margin:0;font-size:50pt;font-style:italic;}
+header a{color:#fff;text-decoration:none;}
+nav ul{list-style:none;display:flex;gap:20px;padding-left:1%;margin:.5% 0 0;}
+nav ul li{font-family:'Georgia','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;font-style:italic;}
+nav ul li a{color:#fff;text-decoration:none;font-weight:bold;transition:color .3s;}
+nav ul li a:hover{color:#f00;}
+main{text-align:center;}
+
+.container{
+  max-width:900px;width:100%;margin:0 auto;padding:0 16px;text-align:center;
+}
+main h2{font-size:50pt;margin:50px 0 20px; font-weight: lighter; font-family:  'Baskerville', 'Georgia','Times New Roman'; font-style: oblique;}
+
+
+button{
+  background:#fff;color:#0f9fe1;border:2px solid #fff;
+  padding:10px 25px;font-size:16px;border-radius:30px;cursor:pointer;
+  transition:transform .2s,background-color .2s,color .2s;
+}
+button:hover{background:#4caf50;color:#fff;transform:scale(1.05);}
+button:active{transform:scale(.96);}
+
+/* ========== PRODUCT ROW (HORIZONTAL) ========== */
+.shop-content{
+  display:flex;              /* 핵심: 가로 정렬 */
+  flex-direction:row;
+  flex-wrap:nowrap;          /* 줄바꿈 금지 */
+  justify-content:center;
+  align-items:flex-start;
+  gap:24px;
+  padding:28px 0;
+  overflow-x:auto;           /* 화면 좁으면 가로 스크롤 */
+  scroll-behavior:smooth;
+}
+.shop-content::-webkit-scrollbar{display:none;} /* 스크롤바 숨김 */
+
+.product-box{
+  flex:0 0 180px;            /* 카드 고정 너비 */
+  width:500px;
+  background:rgba(255,255,255,.1);
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .18s, box-shadow .18s, border-color .18s;
+}
+.product-box:hover{transform:scale(1.06);border-color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.18);}
+.product-box:active{transform:scale(.96);box-shadow:inset 0 3px 8px rgba(0,0,0,.25);}
+
+.product-img {
+  display: block;
+  width: 100%;
+  height: 220px; /* ✅ 고정 높이 추가 */
+  object-fit: contain; /* 이미지가 잘리지 않고 박스에 맞게 */
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+
+/* ========== WRITINGS ========== */
+.writings{margin-top:60px;text-align:left;color:#fff;}
+.writings h3{font-size:20pt;margin-bottom:10px;}
+.writings p{font-size:14pt;line-height:1.6;margin-bottom:16px;}
+.writings ul{margin:0 0 16px 30px;padding:0;}
+.writings li{font-size:13pt;margin-bottom:6px;}
+.writings h4{font-size:12pt;margin-top:10px;}
+
+/* ========== FOOTER ========== */
+footer{text-align:center;color:#fff;font-family:'Baskerville';padding:40px 0 60px;}
+
+/* ========== Responsive ========== */
+@media (max-width:768px){
+  main h2{font-size:24pt;}
+  .product-box{flex-basis:160px;width:160px;}
+}
+
+.product-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* === Cards: bigger, uniform size === */
+.shop-content{
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:28px;
+  padding:32px 0;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+}
+.shop-content::-webkit-scrollbar{display:none}
+
+/* 🔧 카드 크기 한방에 조절하고 싶으면 여기 숫자만 바꿔
+   예) 280 -> 300으로 키우면 더 큼 */
+:root{
+  --card-w: 280px;   /* 카드 너비 */
+  --img-h: 180px;    /* 이미지 고정 높이 */
+}
+
+.product-box{
+  box-sizing:border-box;
+  flex: 0 0 var(--card-w);
+  width: var(--card-w);           /* ✅ width:500px 지움 */
+  background: rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+.product-box:hover{ transform: scale(1.06); border-color:#fff; box-shadow:0 6px 18px rgba(0,0,0,.18); }
+.product-box:active{ transform: scale(.96); box-shadow: inset 0 3px 8px rgba(0,0,0,.25); }
+
+/* 카드 전체를 클릭 영역으로 */
+.product-link{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  height:100%;
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ✅ 이미지/텍스트 높이 통일 */
+.product-img{
+  display:block;
+  width:100%;
+  height: var(--img-h);
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* 제목/설명 줄수 달라도 카드 높이 유지 */
+.product-box h3{
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 6px 0 4px;
+  min-height: 2.6em;   /* 대략 2줄 공간 확보 */
+}
+.product-box .description{
+  display:block;
+  font-size: 12px;
+  opacity: .9;
+  min-height: 1.2em;   /* 한 줄 공간 */
+}

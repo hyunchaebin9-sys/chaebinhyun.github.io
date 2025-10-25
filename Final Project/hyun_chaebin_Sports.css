@@ -1,0 +1,144 @@
+header h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  margin: 0%;
+  font-size: 50pt;
+}
+
+body {
+  background-color: rgb(15, 159, 225);
+
+}
+
+
+header a {
+  text-decoration: none;
+  color: rgb(165, 215, 255);
+}
+
+input[type=text] {
+  width: 130px;
+  transition: width 0.4s ease-in-out;
+  border-radius: 30px;
+  position: absolute;
+  left: 0.5%;
+  font-family: 'Darumadrop One', cursive;
+  border-color: rgb(178, 219, 224);
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+.container {
+  max-width: 1068px;
+  margin: auto;
+  width: 100px;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding-left: 1%;
+  margin-top: 0.5%;
+}
+
+nav ul li {
+  margin-right: 20px;
+  font-family: 'Georgia', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+}
+
+nav ul li a {
+  color: #8fd0f4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #f00;
+}
+
+:root{
+  --wrap: 1200px;
+  --bg: #f5fbff;
+  --ink: #22303a;
+  --muted: #6b7a86;
+  --accent: #1ea1ff;
+  --card: #ffffff;
+  --rule: rgba(0,0,0,.06);
+  --shadow: 0 10px 24px rgba(0,0,0,.08);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg); color:var(--ink); font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
+
+
+/* Hero */
+.hero{background: linear-gradient(180deg,#eaf6ff,transparent)}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 16px}
+.hero-inner{display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:center; padding:26px 0 18px}
+@media (max-width: 900px){ .hero-inner{ grid-template-columns:1fr; } }
+.hero-copy .eyebrow{letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:#2a76b0; margin:0 0 6px}
+.hero h2{font-family:'Playfair Display', serif; font-weight:700; font-size: clamp(30px,6vw,56px); line-height:1.04; margin:0 0 8px; color:#0d3b66}
+.lede{color:var(--muted); font-size:clamp(14px,2.1vw,18px)}
+.hero-img img{width:100%; height:auto; border-radius:18px; box-shadow: var(--shadow)}
+
+.chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.chip{border:1px solid var(--rule); background:#f3faff; color:#0d3b66; padding:8px 12px; border-radius:999px; font-weight:700; font-size:14px}
+.cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+.btn{border:1px solid var(--accent); background:var(--accent); color:#fff; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none}
+.btn:hover{background:#0f8ce6; border-color:#0f8ce6}
+.btn.ghost{background:#fff; color:#0d3b66; border:1px solid var(--rule)}
+.btn.ghost:hover{background:#f3faff}
+
+/* Card / grids */
+main.wrap{padding: 10px 16px 70px}
+.card{background:var(--card); border:1px solid var(--rule); box-shadow: var(--shadow); border-radius: var(--radius); overflow:hidden}
+.pad{padding:18px}
+.grid.two{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; margin:20px 0}
+.grid.three{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin:20px 0}
+@media (max-width: 900px){ .grid.two, .grid.three{ grid-template-columns:1fr; } }
+
+/* Bullets and lists */
+h3,h4{font-family:'Playfair Display', serif; color:#0d3b66; margin:0 0 10px}
+.bullets{list-style:none; padding:0; margin:0; display:grid; gap:10px}
+.bullets li{position:relative; padding-left:26px}
+.bullets li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0d3b66;
+  font-weight: 900;
+}
+.ticks{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+.ticks li{position:relative; padding-left:26px}
+.ticks li::before{content:"✔"; position:absolute; left:0; color:#2a9d8f}
+
+/* Timeline */
+.timeline{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+.timeline li{position:relative; padding-left:18px; color:var(--muted)}
+.timeline .dot{position:absolute; left:0; top:.55em; width:8px; height:8px; background:#0d3b66; border-radius:999px}
+.timeline strong{color:#0d3b66}
+
+/* Gallery */
+.gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+@media (max-width: 900px){ .gallery{grid-template-columns: repeat(2, 1fr)} }
+.tile{border-radius:14px; overflow:hidden; border:1px solid var(--rule)}
+.tile img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4 / 3; transition: transform .35s ease}
+.tile:hover img{transform: scale(1.04)}
+
+.foot{text-align:center; color:var(--muted); margin:40px 0 30px}
+
+
+
+
+footer {
+  text-align: center;
+  color: #fff;
+  font-family: 'Darumadrop One';
+}
