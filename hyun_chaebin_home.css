@@ -1,49 +1,55 @@
+/* base reset that helps across browsers */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+
+/* Header & title */
+header {
+  padding: 8px 16px 12px;
+  text-align: center;
+}
 header h1 {
   font-family: 'Great Vibes', 'Zapfino', 'Monotype Corsiva', 'Segoe Script', cursive;
   font-style: italic;
-  margin: 0;
+  margin: 8px 0 10px;                 /* tighter + cross-browser safe */
   font-size: clamp(44px, 12vw, 150px);
   line-height: 1.05;
 }
+header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Nav: cross-browser stable */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;                     /* prevent weird wrapping */
+  justify-content: center;
+  align-items: center;
+  gap: 18px;                           /* gap is cleaner than li margin */
+  padding: 0;                          /* kill default padding */
+  margin: 0;                           /* kill default margin (Windows differs) */
+}
+
+nav li { line-height: 1.2; }           /* stabilize text height */
+nav a {
+  display: inline-block;               /* bigger click target */
+  padding: 6px 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #fff;
+  transition: color .2s ease-in-out;
+}
+nav a:hover { color: #f00; }
+
+/* Page background/footer (unchanged) */
 body {
   background-color: rgb(86, 159, 201);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0%;
 }
-
-
-header a {
-  text-decoration: none;
-  color: aliceblue;
-}
-
-
-nav ul {
-  list-style: none;
-  display: flex;
-  padding-left: 2%;
-}
-
-nav ul li {
-  margin-right: 30px;
-  font-family: 'Georgia', 'Times New Roman', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-style: italic;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul li a {
-  color: #fff;
-}
-
-nav ul li a:hover {
-  color: #f00;
-  transition: color 0.2s ease-in-out;
-}
-
-
 footer {
   text-align: center;
   color: #fff;
