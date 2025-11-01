@@ -60,7 +60,7 @@ nav a:hover, nav a.active {
     url('12. Chaebin Hyun  - Movement of Melody .jpg') center/cover no-repeat,
     url('15. Chaebin Hyun  - Traditional Modernity.jpg') center/cover no-repeat;
   background-blend-mode: overlay;
-  animation: collageMove 30s infinite alternate ease-in-out;
+  animation: collageMove 20s infinite alternate ease-in-out;
 }
 
 @keyframes collageMove {
