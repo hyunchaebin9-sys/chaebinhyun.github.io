@@ -1,95 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Chaebin Hyun</title>
-  <link rel="stylesheet" href="hyun_chaebin_ArtWriting.css">
-  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art & Writing — Chaebin Hyun</title>
+  <link rel="icon" type="image/x-icon" href="icon_img.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS: 페이지 CSS → 공용 헤더 CSS (순서 중요) -->
+  <link rel="stylesheet" href="hyun_chaebin_ArtWriting.css" />
+  <link rel="stylesheet" href="hyun_chaebin_header.css" />
 </head>
 
 <body>
-  <header>
-    <h1><a href="hyun_chaebin_home.html">Chaebin Hyun</a></h1>
-    <nav>
-      <ul>
-        <li><a href="hyun_chaebin_home.html">Home</a></li>
-        <li><a href="hyun_chaebin_ArtPractice.html">Art Practice</a></li>
-        <li><a href="hyun_chaebin_ArtInternship.html">Art & Internship</a></li>
-        <li><a href="hyun_chaebin_ArtWriting.html">Art & Writing</a></li>
-        <li><a href="hyun_chaebin_ArtCommunity.html">Art & Community</a></li>
-        <li><a href="hyun_chaebin_Activism.html">Activism & Empathy</a></li>
-        <li><a href="hyun_chaebin_Sports.html">Sports</a></li>
-        <li><a href="hyun_chaebin_about.html">About</a></li>
-      </ul>
-    </nav>
-    <hr>
+  <!-- Unified header -->
+  <header class="ac-header">
+    <div class="bar container">
+      <h1 class="brand">
+        <a href="hyun_chaebin_home.html">
+          <span class="first">Chaebin</span>
+          <span class="last">Hyun</span>
+        </a>
+      </h1>
+      <nav aria-label="primary" class="site-nav">
+        <ul>
+          <li><a href="hyun_chaebin_home.html">Home</a></li>
+          <li><a href="hyun_chaebin_ArtPractice.html">Art Practice</a></li>
+          <li><a href="hyun_chaebin_ArtInternship.html">Art &amp; Internship</a></li>
+          <li><a href="hyun_chaebin_ArtWriting.html" aria-current="page">Art &amp; Writing</a></li>
+          <li><a href="hyun_chaebin_ArtCommunity.html">Art &amp; Community</a></li>
+          <li><a href="hyun_chaebin_Activism.html">Activism &amp; Empathy</a></li>
+          <li><a href="hyun_chaebin_Sports.html">Sports</a></li>
+          <li><a href="hyun_chaebin_about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="container">
-      <h2>"Art is something you notice when you stop to write"</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <blockquote class="quote">“Art is something you notice when you stop to write”</blockquote>
+      <a class="btn" href="https://chaebinhyun.blogspot.com/" target="_blank" rel="noopener">Visit My Blog</a>
+    </div>
+  </section>
 
-      <a href="https://chaebinhyun.blogspot.com/" target="_blank">
-        <button>Visit My Blog</button>
+  <main class="wrap">
+    <!-- Intro / role -->
+    <section class="card pad intro">
+      <h2>Exhibition Reviews as a Guest Columnist</h2>
+      <p>
+        As a contributing columnist for the online media platform <strong>Issue On</strong>, I write exhibition reviews
+        that explore spatial experience, contemporary sculpture, and sensory perception. My writing focuses on visual and
+        conceptual depth, aiming to deliver critical yet empathetic reflections on art.
+      </p>
+
+      <h3>Published Articles</h3>
+      <ul class="list">
+        <li><em>Reconsidering Scale: Human Scale</em> (Aug 2025)</li>
+        <li><em>The Gaze and the Figure: Ron Mueck</em> (June 2025)</li>
+        <li><em>Liminal, Yet Still Present</em> (May 2025)</li>
+      </ul>
+
+      <div class="meta">
+        <span>Role: Guest Columnist (Art &amp; Culture)</span>
+        <span>Platform: Issue On</span>
+      </div>
+    </section>
+
+    <!-- Cards row (uniform like Sports page) -->
+    <section class="cards">
+      <a class="card link" href="https://www.issueon.co.kr/news/articleView.html?idxno=8537" target="_blank" rel="noopener">
+        <img src="issueon.png" alt="Reconsidering Scale: Human Scale" />
+        <h4>Reconsidering Scale: Human Scale</h4>
+        <span class="desc">(Aug 2025)</span>
       </a>
 
-    
+      <a class="card link" href="https://www.issueon.co.kr/news/articleView.html?idxno=5792" target="_blank" rel="noopener">
+        <img src="issueon1.png" alt="The Gaze and the Figure: Ron Mueck" />
+        <h4>The Gaze and the Figure: Ron Mueck</h4>
+        <span class="desc">(June 2025)</span>
+      </a>
 
-      <!-- ====== Text Section ====== -->
-      <section class="writings">
-        <h3>Exhibition Reviews as a Guest Columnist</h3>
-        <p>
-          As a contributing columnist for the online media platform <strong>Issue On</strong>, 
-          I write exhibition reviews that explore spatial experience, contemporary sculpture, and sensory perception. 
-          My writing focuses on visual and conceptual depth, aiming to deliver critical yet empathetic reflections on art.
-        </p>
-
-        <h3>Published Articles</h3>
-        <ul>
-          <li><em>Reconsidering Scale: Human Scale</em> (Aug 2025)</li>
-          <li><em>The Gaze and the Figure: Ron Mueck</ㄷm> (June 2025)</li>
-          <li><em>Liminal, Yet Still Present</em> (May 2025)</li>
-        </ul>
-
-        <h4>Role: Guest Columnist (Art & Culture)</h4>
-        <h4>Platform: Issue On</h4>
-
-        <!-- ====== Image Boxes Section ====== -->
-      <section class="shop-content">
-        <div class="product-box">
-          <a class="product-link" href="https://www.issueon.co.kr/news/articleView.html?idxno=8537" target="_blank">
-            <img src="issueon.png" alt="대성당" class="product-img">
-            <h3>Reconsidering Scale: Human Scale</h3>
-            <span class="description">(Aug 2025)</span>
-          </a>
-        </div>
-
-        <div class="product-box">
-          <a class="product-link" href="https://www.issueon.co.kr/news/articleView.html?idxno=5792" target="_blank">
-            <img src="issueon1.png" alt="(Mask II, 2001–2002)" class="product-img">
-            <h3>The Gaze and the Figure: Ron Mueck</h3>
-            <span class="description">(June 2025)</span>
-          </a>
-        </div>
-
-        <div class="product-box">
-          <a class="product-link" href="https://www.issueon.co.kr/news/articleView.html?idxno=5213" target="_blank">
-            <img src="issueon2.png" alt="Camata" class="product-img">
-            <h3>Liminal, Yet Still Present</h3>
-            <span class="description">(May 2025)</span>
-          </a>
-        </div>
-      </section>
-      </section>
-    </div>
+      <a class="card link" href="https://www.issueon.co.kr/news/articleView.html?idxno=5213" target="_blank" rel="noopener">
+        <img src="issueon2.png" alt="Liminal, Yet Still Present" />
+        <h4>Liminal, Yet Still Present</h4>
+        <span class="desc">(May 2025)</span>
+      </a>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Chaebin Hyun</p>
-  </footer>
+  <footer class="foot">© 2025 Chaebin Hyun</footer>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- active 탭 자동 하이라이트 (백업) -->
+  <script>
+    (function(){
+      var file = location.pathname.split('/').pop() || 'hyun_chaebin_home.html';
+      document.querySelectorAll('.ac-header .site-nav a').forEach(function(a){
+        if (a.getAttribute('href') === file) a.setAttribute('aria-current','page');
+      });
+    })();
+  </script>
 </body>
 </html>

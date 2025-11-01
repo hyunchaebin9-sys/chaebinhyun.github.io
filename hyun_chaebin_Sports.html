@@ -5,25 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sports & Empathy — Curling | Chaebin Hyun</title>
   <link rel="icon" type="image/x-icon" href="icon_img.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Page CSS first, then shared header CSS (순서 중요) -->
   <link rel="stylesheet" href="hyun_chaebin_Sports.css">
+  <link rel="stylesheet" href="hyun_chaebin_header.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="wrap">
-      <h1 class="brand"><a href="hyun_chaebin_home.html">Chaebin Hyun</a></h1>
-      <nav aria-label="primary">
-        <ul class="nav">
+
+  <!-- Unified header -->
+  <header class="ac-header">
+    <div class="bar container">
+      <h1 class="brand">
+        <a href="hyun_chaebin_home.html">
+          <span class="first">Chaebin</span>
+          <span class="last">Hyun</span>
+        </a>
+      </h1>
+      <nav aria-label="primary" class="site-nav">
+        <ul>
           <li><a href="hyun_chaebin_home.html">Home</a></li>
           <li><a href="hyun_chaebin_ArtPractice.html">Art Practice</a></li>
           <li><a href="hyun_chaebin_ArtInternship.html">Art &amp; Internship</a></li>
           <li><a href="hyun_chaebin_ArtWriting.html">Art &amp; Writing</a></li>
           <li><a href="hyun_chaebin_ArtCommunity.html">Art &amp; Community</a></li>
           <li><a href="hyun_chaebin_Activism.html">Activism &amp; Empathy</a></li>
-          <li><a aria-current="page" class="active" href="hyun_chaebin_Sports.html">Sports &amp; Empathy</a></li>
+          <li><a href="hyun_chaebin_Sports.html" aria-current="page">Sports</a></li>
           <li><a href="hyun_chaebin_about.html">About</a></li>
         </ul>
       </nav>
@@ -46,7 +58,6 @@
           <span class="chip">Positions: Vice Captain</span>
         </div>
         <div class="cta">
-          <!-- replace with your real curling site -->
           <a class="btn" href="http://spps-curling.com/sub/ab_member.php" target="_blank" rel="noopener">Visit Curling Website</a>
           <a class="btn ghost" href="#gallery">See Gallery</a>
         </div>
@@ -119,5 +130,15 @@
   </main>
 
   <footer class="foot">© 2025 Chaebin Hyun</footer>
+
+  <!-- Auto-highlight current page (선택) -->
+  <script>
+  (function(){
+    var file = location.pathname.split('/').pop() || 'hyun_chaebin_home.html';
+    document.querySelectorAll('.ac-header .site-nav a').forEach(function(a){
+      if (a.getAttribute('href') === file) a.setAttribute('aria-current','page');
+    });
+  })();
+  </script>
 </body>
 </html>

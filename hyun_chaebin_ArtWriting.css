@@ -1,163 +1,114 @@
-
-body{
-  background:#93CDCB;
-  margin:0;
-  color:#fff;
-  font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
-}
-header h1{margin:0;font-size:50pt;font-style:italic;}
-header a{color:#fff;text-decoration:none;}
-nav ul{list-style:none;display:flex;gap:20px;padding-left:1%;margin:.5% 0 0;}
-nav ul li{font-family:'Georgia','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;font-style:italic;}
-nav ul li a{color:#fff;text-decoration:none;font-weight:bold;transition:color .3s;}
-nav ul li a:hover{color:#f00;}
-main{text-align:center;}
-
-.container{
-  max-width:900px;width:100%;margin:0 auto;padding:0 16px;text-align:center;
-}
-main h2{font-size:50pt;margin:50px 0 20px; font-weight: lighter; font-family:  'Baskerville', 'Georgia','Times New Roman'; font-style: oblique;}
-
-
-button{
-  background:#fff;color:#0f9fe1;border:2px solid #fff;
-  padding:10px 25px;font-size:16px;border-radius:30px;cursor:pointer;
-  transition:transform .2s,background-color .2s,color .2s;
-}
-button:hover{background:#4caf50;color:#fff;transform:scale(1.05);}
-button:active{transform:scale(.96);}
-
-/* ========== PRODUCT ROW (HORIZONTAL) ========== */
-.shop-content{
-  display:flex;              /* 핵심: 가로 정렬 */
-  flex-direction:row;
-  flex-wrap:nowrap;          /* 줄바꿈 금지 */
-  justify-content:center;
-  align-items:flex-start;
-  gap:24px;
-  padding:28px 0;
-  overflow-x:auto;           /* 화면 좁으면 가로 스크롤 */
-  scroll-behavior:smooth;
-}
-.shop-content::-webkit-scrollbar{display:none;} /* 스크롤바 숨김 */
-
-.product-box{
-  flex:0 0 180px;            /* 카드 고정 너비 */
-  width:500px;
-  background:rgba(255,255,255,.1);
-  border-radius:10px;
-  padding:10px;
-  text-align:center;
-  border:1px solid transparent;
-  cursor:pointer;
-  transition:transform .18s, box-shadow .18s, border-color .18s;
-}
-.product-box:hover{transform:scale(1.06);border-color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.18);}
-.product-box:active{transform:scale(.96);box-shadow:inset 0 3px 8px rgba(0,0,0,.25);}
-
-.product-img {
-  display: block;
-  width: 100%;
-  height: 220px; /* ✅ 고정 높이 추가 */
-  object-fit: contain; /* 이미지가 잘리지 않고 박스에 맞게 */
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-
-/* ========== WRITINGS ========== */
-.writings{margin-top:60px;text-align:left;color:#fff;}
-.writings h3{font-size:20pt;margin-bottom:10px;}
-.writings p{font-size:14pt;line-height:1.6;margin-bottom:16px;}
-.writings ul{margin:0 0 16px 30px;padding:0;}
-.writings li{font-size:13pt;margin-bottom:6px;}
-.writings h4{font-size:12pt;margin-top:10px;}
-
-/* ========== FOOTER ========== */
-footer{text-align:center;color:#fff;font-family:'Baskerville';padding:40px 0 60px;}
-
-/* ========== Responsive ========== */
-@media (max-width:768px){
-  main h2{font-size:24pt;}
-  .product-box{flex-basis:160px;width:160px;}
-}
-
-.product-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.product-link:hover {
-  text-decoration: none;
-  color: #fff;
-}
-
-/* === Cards: bigger, uniform size === */
-.shop-content{
-  display:flex;
-  flex-wrap:nowrap;
-  justify-content:center;
-  align-items:flex-start;
-  gap:28px;
-  padding:32px 0;
-  overflow-x:auto;
-  scroll-behavior:smooth;
-}
-.shop-content::-webkit-scrollbar{display:none}
-
-/* 🔧 카드 크기 한방에 조절하고 싶으면 여기 숫자만 바꿔
-   예) 280 -> 300으로 키우면 더 큼 */
+/* ===== Design tokens (Sports 느낌) ===== */
 :root{
-  --card-w: 280px;   /* 카드 너비 */
-  --img-h: 180px;    /* 이미지 고정 높이 */
+  --container: 1200px;
+  --gap: 18px;
+  --radius: 18px;
+  --shadow: 0 8px 18px rgba(0,0,0,.10);
+  --shadow-soft: 0 6px 16px rgba(0,0,0,.08);
+
+  --ice-1: #eaf6ff;   /* very light blue */
+  --ice-2: #dff5f5;   /* minty ice */
+  --ink: #2c2c34;
+  --muted:#6f7b86;
+
+  --card:#ffffff;
+  --accent:#00a2d4;
+  --accent-hover:#0082b1;
 }
 
-.product-box{
-  box-sizing:border-box;
-  flex: 0 0 var(--card-w);
-  width: var(--card-w);           /* ✅ width:500px 지움 */
-  background: rgba(255,255,255,.12);
-  border-radius: 12px;
-  padding: 14px 12px;
-  text-align: center;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: transform .18s, box-shadow .18s, border-color .18s;
+/* ===== Base ===== */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+  color:var(--ink);
+  line-height:1.6;
+  background: linear-gradient(180deg, var(--ice-1), var(--ice-2) 46%, #f6f9fb 100%);
 }
-.product-box:hover{ transform: scale(1.06); border-color:#fff; box-shadow:0 6px 18px rgba(0,0,0,.18); }
-.product-box:active{ transform: scale(.96); box-shadow: inset 0 3px 8px rgba(0,0,0,.25); }
+.wrap{ max-width: var(--container); margin:0 auto; padding:0 var(--gap); }
 
-/* 카드 전체를 클릭 영역으로 */
-.product-link{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  height:100%;
+/* ===== Hero ===== */
+.hero{ padding: 26px 0 10px; }
+.quote{
+  margin: 0 0 14px;
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-weight:600;
+  font-size: clamp(22px, 4.8vw, 42px);
+  color:#123b52;
+}
+.btn{
+  display:inline-block;
+  margin: 6px auto 0;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background:#ffffff;
+  color: var(--accent);
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow: var(--shadow-soft);
+  font-weight:700;
   text-decoration:none;
-  color:inherit;
+  transition: transform .15s, background .2s, color .2s;
 }
+.btn:hover{ background: var(--accent); color:#fff; transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
 
-/* ✅ 이미지/텍스트 높이 통일 */
-.product-img{
-  display:block;
-  width:100%;
-  height: var(--img-h);
-  object-fit: contain;
-  border-radius: 8px;
-  margin-bottom: 10px;
+/* ===== Intro card ===== */
+.card{ background:var(--card); border:1px solid rgba(0,0,0,.08); border-radius:var(--radius); box-shadow: var(--shadow); }
+.pad{ padding: clamp(16px, 2.6vw, 26px); }
+.intro{ margin: 8px 0 18px; }
+.intro h2{
+  margin:0 0 8px;
+  font-family:'Playfair Display', serif;
+  font-size: clamp(22px, 4.2vw, 34px);
+  color:#0d2b3a;
 }
+.intro p{ margin:.5rem 0 1rem; color:var(--ink); }
+.intro h3{ margin: 1rem 0 .35rem; font-size: clamp(18px, 2.6vw, 22px); color:#0d2b3a; }
+.list{ margin:.2rem 0 1rem 1.2rem; color:#233740; }
+.meta{ display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-weight:700; }
 
-/* 제목/설명 줄수 달라도 카드 높이 유지 */
-.product-box h3{
-  font-size: 14px;
-  line-height: 1.3;
-  margin: 6px 0 4px;
-  min-height: 2.6em;   /* 대략 2줄 공간 확보 */
+/* ===== Cards row (uniform) ===== */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin: 12px 0 60px;
 }
-.product-box .description{
-  display:block;
-  font-size: 12px;
-  opacity: .9;
-  min-height: 1.2em;   /* 한 줄 공간 */
+@media (max-width: 920px){ .cards{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 560px){ .cards{ grid-template-columns: 1fr; } }
+
+.cards .card{
+  padding: 12px;
+  text-align:center;
+  border-radius: 14px;
+  transition: transform .16s, box-shadow .16s, border-color .16s;
+}
+.cards .card:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.14); }
+.cards .card img{
+  width:100%; height: 180px; object-fit: contain;
+  border-radius: 8px; margin-bottom: 10px; background:#fff;
+}
+.cards .card h4{
+  margin: 4px 0 2px; font-size: 16px; line-height:1.35; min-height:2.6em;
+}
+.cards .card .desc{
+  display:block; font-size:13px; color:#49616a; min-height:1.2em;
+}
+.link{ color:inherit; text-decoration:none; }
+
+/* Footer */
+.foot{ text-align:center; color:#6b7a84; margin: 36px 0 42px; }
+
+/* 안전: 예전 요소 제거 */
+header hr, .topbar, .rainbow{ display:none !important; }
+
+/* Center the hero button */
+.hero {
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }

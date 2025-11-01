@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Chaebin Hyun</title>
-  <link rel="stylesheet" href="hyun_chaebin_ArtInternship.css">
-  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="icon_img.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art & Internship — Chaebin Hyun</title>
+  <link rel="icon" type="image/x-icon" href="icon_img.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS: Page 먼저, 공용 헤더 나중 (순서 중요) -->
+  <link rel="stylesheet" href="hyun_chaebin_ArtInternship.css" />
+  <link rel="stylesheet" href="hyun_chaebin_header.css" />
 </head>
 
 <body>
-  <header>
-    <h1><a href="hyun_chaebin_home.html">Chaebin Hyun</a></h1>
-    <nav>
-      <ul>
-        <li><a href="hyun_chaebin_home.html">Home</a></li>
-        <li><a href="hyun_chaebin_ArtPractice.html">Art Practice</a></li>
-        <li><a href="hyun_chaebin_ArtInternship.html">Art & Internship</a></li>
-        <li><a href="hyun_chaebin_ArtWriting.html">Art & Writing</a></li>
-        <li><a href="hyun_chaebin_ArtCommunity.html">Art & Community</a></li>
-        <li><a href="hyun_chaebin_Activism.html">Activism & Empathy</a></li>
-        <li><a href="hyun_chaebin_Sports.html">Sports</a></li>
-        <li><a href="hyun_chaebin_about.html">About</a></li>
-      </ul>
-    </nav>
-    <hr>
+  <!-- 통일된 헤더 -->
+  <header class="ac-header">
+    <div class="bar container">
+      <h1 class="brand">
+        <a href="hyun_chaebin_home.html">
+          <span class="first">Chaebin</span>
+          <span class="last">Hyun</span>
+        </a>
+      </h1>
+      <nav aria-label="primary" class="site-nav">
+        <ul>
+          <li><a href="hyun_chaebin_home.html">Home</a></li>
+          <li><a href="hyun_chaebin_ArtPractice.html">Art Practice</a></li>
+          <li><a href="hyun_chaebin_ArtInternship.html" aria-current="page">Art &amp; Internship</a></li>
+          <li><a href="hyun_chaebin_ArtWriting.html">Art &amp; Writing</a></li>
+          <li><a href="hyun_chaebin_ArtCommunity.html">Art &amp; Community</a></li>
+          <li><a href="hyun_chaebin_Activism.html">Activism &amp; Empathy</a></li>
+          <li><a href="hyun_chaebin_Sports.html">Sports</a></li>
+          <li><a href="hyun_chaebin_about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
+  <!-- Short Reflection (맨 위) -->
 
-  <div class="subnav" role="navigation" aria-label="sections">
-    <div class="chips">
+
+  <!-- Subnav chips -->
+  <nav class="subnav" aria-label="sections">
+    <div class="wrap chips">
       <a class="chip" href="#corner-gallery">Corner Gallery</a>
       <a class="chip" href="#beok">BEOK Logo</a>
-      <a class="chip" href="#logo">BEOK Campaign Design</a>
+      <a class="chip" href="#campaign">BEOK Campaign Design</a>
     </div>
-  </div>
-
-  <main>
-    <section class="hero">
-      <div class="timeline" aria-label="timeline">
-        <div class="badge"><span class="dot"></span>2024 • Corner Gallery (Curatorial / Prep)</div>
-        <div class="badge"><span class="dot"></span>2023-2025 • Logo (Design / Editorial)</div>
-        <div class="badge"><span class="dot"></span>2024 • BEOK Poster (Design)</div>
+  </nav>
+  <section class="reflect">
+    <div class="wrap">
+      <div class="card pad r-card">
+        <h2 class="r-title">Short Reflection</h2>
+        <p class="r-body">
+          Working across a gallery, logo projects, and a public campaign changed how I think about art.
+          I learned that design isn’t only about “taste”—it’s a conversation between message, audience,
+          and timing. At Corner Gallery, I saw how a wall label can steer a viewer’s pace; with BEOK,
+          I learned to defend choices with systems (color, typography, grid); in the campaign work,
+          I practiced listening to constraints and still making something kind and clear.
+        </p>
+        <div class="timeline">
+          <div class="badge"><span class="dot"></span>2024 • Corner Gallery (Curatorial / Prep)</div>
+          <div class="badge"><span class="dot"></span>2023–2025 • BEOK Logo (Design / Editorial)</div>
+          <div class="badge"><span class="dot"></span>2024 • BEOK Campaign (Design)</div>
+        </div>
       </div>
-    </section>
-
-    <!-- CORNER GALLERY -->
+    </div>
+  </section>
+  <!-- Main -->
+  <main class="wrap">
+    <!-- Corner Gallery -->
     <section id="corner-gallery" class="org">
       <div class="grid">
         <article class="card pad">
@@ -54,14 +83,13 @@
             <span>Seoul, KR</span>
             <span>2024</span>
           </div>
-          <p>Assisted in exhibition planning and coordination (artwork layout, visitor flow, schedule management)</p>
+          <p>Assisted in exhibition planning and coordination (artwork layout, visitor flow, schedule management).</p>
           <ul class="bullets">
-            <li>Conducted artist and artwork research; drafted bilingual exhibition texts (Korean ↔ English)</li>
-            <li>Supported translation of exhibition materials, artwork labels, and promotional content</li>
-            <li>Served as a docent, providing visitors with contextual explanations of artworks and artists</li>
-            <li>Designed and distributed social media content for exhibition promotion (image editing, captions, scheduling)</li>
+            <li>Conducted artist/artwork research; drafted bilingual exhibition texts (Korean ↔ English).</li>
+            <li>Translated exhibition materials, artwork labels, and promotional content.</li>
+            <li>Docent duties: provided visitors with context on artworks and artists.</li>
+            <li>Designed and scheduled social media content for exhibition promotion.</li>
           </ul>
-
           <div class="links">
             <a class="btn" href="https://www.instagram.com/corner_gallery/" target="_blank" rel="noopener">Visit Instagram</a>
           </div>
@@ -70,21 +98,20 @@
         <aside class="card pad">
           <h3 style="margin-top:0">Quick facts</h3>
           <ul class="bullets">
-            <li>Location: 14 Bukchon-ro 5-gil, Jongno-gu, Seoul, South Korea</li>
+            <li>Location: 14 Bukchon-ro 5-gil, Jongno-gu, Seoul</li>
             <li>Supervisor: Director Jung-goo Yoon</li>
           </ul>
         </aside>
       </div>
 
       <div class="masonry" aria-label="Corner Gallery images">
-        <!-- Replace src with your photos -->
-        <figure class="tile"><a class="thumb" href="#" data-title="Corner Gallery"><img src="corner1.jpeg" alt="gallery pic"></a></figure>
-        <figure class="tile"><a class="thumb" href="#" data-title="Corner Gallery"><img src="corner2.jpeg" alt="gallery pic"></a></figure>
-        <figure class="tile"><a class="thumb" href="#" data-title="Corner Gallery"><img src="corner3.jpeg" alt="gallery pic"></a></figure>
+        <figure class="tile"><a class="thumb"><img src="corner1.jpeg" alt="Corner Gallery 1"></a></figure>
+        <figure class="tile"><a class="thumb"><img src="corner2.jpeg" alt="Corner Gallery 2"></a></figure>
+        <figure class="tile"><a class="thumb"><img src="corner3.jpeg" alt="Corner Gallery 3"></a></figure>
       </div>
     </section>
 
-    <!-- BEOK -->
+    <!-- BEOK Logo -->
     <section id="beok" class="org">
       <div class="grid">
         <article class="card pad">
@@ -94,17 +121,18 @@
             <span>Seoul, KR</span>
             <span>June 2023 – Present</span>
           </div>
-          <p>Participated in the official logo design project; proposed a color concept symbolizing sustainability and diversity; produced multiple design drafts.</p>
+          <p>Proposed a sustainability-centered color system and produced multiple logo drafts for BEOK.</p>
           <ul class="bullets">
-            <li>Designed and supported production of various promotional materials, including campaign posters, leaflets, and social media card news.</li>
-            <li>The final logo design was officially adopted and featured on the organization’s website, social media, and printed materials, with a formal acknowledgment: “Special Thanks to Chaebin.”</li>
-            <li>Contributed to environmental campaigns and events (workshops, exhibitions, seminars) through on-site photography, documentation, and content creation.</li>
+            <li>Produced campaign posters, leaflets, and social media cards with brand consistency.</li>
+            <li>Logo adopted across website, SNS, and print with credit: “Special Thanks to Chaebin.”</li>
+            <li>Supported events (workshops, exhibitions) via photo docs and content creation.</li>
           </ul>
           <div class="links">
             <a class="btn" href="#" target="_blank" rel="noopener">BEOK Website</a>
-           <a class="btn" href="https://www.action4earth.org/blog" target="_blank" rel="noopener">action4earth Wesbite</a>
+            <a class="btn" href="https://www.action4earth.org/blog" target="_blank" rel="noopener">action4earth Website</a>
           </div>
         </article>
+
         <aside class="card pad">
           <h3 style="margin-top:0">Quick facts</h3>
           <ul class="bullets">
@@ -113,29 +141,31 @@
           </ul>
         </aside>
       </div>
-      <div class="masonry" aria-label="BEOK images">
-        <figure class="tile"><a class="thumb" href="#" data-title="Logo"><img src="BEOKLogo.jpeg" alt="posters"></a></figure>
-        <figure class="tile"><a class="thumb" href="#" data-title="Logo featured"><img src="logocertificate.png" alt="posters"></a></figure>
 
+      <div class="masonry" aria-label="BEOK images">
+        <figure class="tile"><a class="thumb"><img src="BEOKLogo.jpeg" alt="BEOK Logo"></a></figure>
+        <figure class="tile"><a class="thumb"><img src="logocertificate.png" alt="Logo certificate"></a></figure>
       </div>
     </section>
 
-    <!-- LOGO -->
-    <section id="logo" class="org">
+    <!-- BEOK Campaign -->
+    <section id="campaign" class="org">
       <div class="grid">
         <article class="card pad">
           <h2>BEOK Campaign Design</h2>
           <div class="meta">
-            <span>Role:Design Research Intern – Eco-Friendly Transportation Awareness Campaign</span>
+            <span>Role: Design Research Intern – Eco-Friendly Transportation Awareness</span>
             <span>Seoul, KR</span>
             <span>2024</span>
           </div>
-          <p>Participated as an intern in BeOK’s public campaign design project .</p>
+          <p>Intern on a public campaign commissioned by the Ministry of Environment (eco-friendly vehicles).</p>
           <ul class="bullets">
-            <li>Assisted in research and development of visual ideas for a public awareness campaign of Ministry of Environment, promoting eco-friendly vehicles.</li>
-            <li>Participated in design meetings, contributing to color, typography, and visual concept proposals.</li>
-            <li>Collaborated on draft designs for promotional materials (posters and social media content) and learned to incorporate professional feedback.</li>
+            <li>Assisted research and visual ideation; prepared color/typography proposals.</li>
+            <li>Joined design meetings; incorporated feedback into poster/SNS drafts.</li>
+            <li>Learned production workflow from concept to deliverables.</li>
+          </ul>
         </article>
+
         <aside class="card pad">
           <h3 style="margin-top:0">Quick facts</h3>
           <ul class="bullets">
@@ -144,21 +174,25 @@
           </ul>
         </aside>
       </div>
-      <div class="masonry" aria-label="LOGO images">
-        <figure class="tile"><a class="thumb" href="#" data-title="Poster Design"><img src="Campaign1.jpeg" alt="type"></a></figure>
-        <figure class="tile"><a class="thumb" href="#" data-title="Poster Design2"><img src="Campaign2.jpeg" alt="type"></a></figure>
-        <figure class="tile"><a class="thumb" href="#" data-title="Poster Design3"><img src="Campaign3.jpeg" alt="type"></a></figure>
 
-
+      <div class="masonry" aria-label="Campaign images">
+        <figure class="tile"><a class="thumb"><img src="Campaign1.jpeg" alt="Campaign Poster 1"></a></figure>
+        <figure class="tile"><a class="thumb"><img src="Campaign2.jpeg" alt="Campaign Poster 2"></a></figure>
+        <figure class="tile"><a class="thumb"><img src="Campaign3.jpeg" alt="Campaign Poster 3"></a></figure>
       </div>
     </section>
-
-    <footer>© 2025 Chaebin Hyun</footer>
   </main>
 
+  <footer class="foot">© 2025 Chaebin Hyun</footer>
 
-
-  
-  
+  <!-- 현재 탭 하이라이트 자동 -->
+  <script>
+    (function(){
+      var file = location.pathname.split('/').pop() || 'hyun_chaebin_home.html';
+      document.querySelectorAll('.ac-header .site-nav a').forEach(function(a){
+        if (a.getAttribute('href') === file) a.setAttribute('aria-current','page');
+      });
+    })();
+  </script>
 </body>
 </html>

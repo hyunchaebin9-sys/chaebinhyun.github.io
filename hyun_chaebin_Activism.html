@@ -4,19 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Activism & Empathy — Chaebin Hyun</title>
-  <link rel="icon" type="image/x-icon" href="icon_img.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="hyun_chaebin_Activism.css">
+  <link rel="icon" type="image/x-icon" href="icon_img.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Page CSS first, then shared header CSS (순서 중요) -->
+  <link rel="stylesheet" href="hyun_chaebin_Activism.css" />
+  <link rel="stylesheet" href="hyun_chaebin_header.css" />
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <h1><a href="hyun_chaebin_home.html" class="brand-link">Chaebin Hyun</a></h1>
-      </div>
-      <nav aria-label="primary">
+  <!-- Unified header -->
+  <header class="ac-header">
+    <div class="bar container">
+      <h1 class="brand">
+        <a href="hyun_chaebin_home.html">
+          <span class="first">Chaebin</span>
+          <span class="last">Hyun</span>
+        </a>
+      </h1>
+      <nav aria-label="primary" class="site-nav">
         <ul>
           <li><a href="hyun_chaebin_home.html">Home</a></li>
           <li><a href="hyun_chaebin_ArtPractice.html">Art Practice</a></li>
@@ -29,25 +38,24 @@
         </ul>
       </nav>
     </div>
-
   </header>
-  <div class="rainbow" aria-hidden="true"></div>
 
-  <div class="hero">
+  <!-- Hero (optional quote) -->
+  <section class="hero">
+ 
+  </section>
 
-  </div>
-
-  <main>
+  <main class="wrap">
     <!-- Pride Festival -->
     <section class="card" id="pride">
       <div class="pad">
         <div class="row">
-          <div>
+          <article>
             <div class="hgroup">
-              <h3>Pride Festival</h3>
+              <h2>Pride Festival</h2>
               <div class="meta">
-                <span class="chip" title="Role">Role: Attendee / Ally</span>
-                <span class="chip" title="Year">Seoul Queer Festival · 2024</span>
+                <span class="chip">Role: Attendee / Ally</span>
+                <span class="chip">Seoul Queer Festival · 2024</span>
               </div>
             </div>
             <ul class="bullets">
@@ -55,16 +63,16 @@
               <li>Explored booths and spoke with <strong>Dding Ddong</strong> youth advocates about affirmation and safe spaces for queer teens.</li>
               <li>Listened to stories from LGBTQ+ servicemembers and veterans; reflected on representation within the military.</li>
               <li>Observed the march atmosphere—music, color, and solidarity—and considered the role of supportive allies.</li>
-              <li>Wrote a reflection, <em>“To the Beat of My Own Drum,”</em> about empathy, showing up, and amplifying voices.</li>
+              <li>Wrote <em>“To the Beat of My Own Drum”</em> about empathy, showing up, and amplifying voices.</li>
             </ul>
-          </div>
-          <div>
+          </article>
+          <aside>
             <div class="gallery" aria-label="Pride photos">
-              <div class="thumb"><img src="pride.jpeg" alt="Pride Festival entrance"></div>
-              <div class="thumb"><img src="pride2.jpeg" alt="Pride Balloons"></div>
-              <div class="thumb"><img src="pride3.jpeg" alt="Pride crowds"></div>
+              <figure class="tile"><img src="pride.jpeg" alt="Pride Festival entrance" /></figure>
+              <figure class="tile"><img src="pride2.jpeg" alt="Pride balloons" /></figure>
+              <figure class="tile"><img src="pride3.jpeg" alt="Pride crowds" /></figure>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -73,25 +81,33 @@
     <section class="card" id="anti-asian-resources">
       <div class="pad">
         <div class="hgroup">
-          <h3>Anti-Asian Harassment &amp; Support Resources</h3>
-          <div class="meta">Reporting portals, bystander training, and community orgs.</div>
+          <h2>Anti-Asian Harassment &amp; Support Resources</h2>
+          <p class="meta">Reporting portals, bystander training, and community orgs.</p>
         </div>
 
         <div class="resources">
-          <div class="res">
+          <article class="res">
             <div>
-              <h4>Stop AAPI Hate — Report Incidents</h4>
+              <h3>Stop AAPI Hate — Report Incidents</h3>
               <p>Multi-language reporting center and research hub documenting anti-Asian incidents.</p>
             </div>
             <a class="btn" href="https://stopaapihate.org/reportincident" target="_blank" rel="noopener">Open</a>
-          </div>
-\
-          </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>© 2025 Chaebin Hyun</footer>
+  <footer class="foot">© 2025 Chaebin Hyun</footer>
+
+  <!-- Auto-highlight (안전하게 유지) -->
+  <script>
+    (function () {
+      var file = location.pathname.split('/').pop() || 'hyun_chaebin_home.html';
+      document.querySelectorAll('.ac-header .site-nav a').forEach(function (a) {
+        if (a.getAttribute('href') === file) a.setAttribute('aria-current', 'page');
+      });
+    })();
+  </script>
 </body>
 </html>
