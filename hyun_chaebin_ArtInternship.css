@@ -1,17 +1,42 @@
+
+
+
+/* Global reset so this page matches others */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
 /* ===== Page tokens ===== */
-:root{
+
+  :root{
+ --container: 1200px;
   --gap: 18px;
-  --radius: 18px;
+  --radius: 16px;
   --shadow: 0 8px 18px rgba(0,0,0,.10);
   --shadow-soft: 0 6px 16px rgba(0,0,0,.08);
-  --bg: #f5f7fa;
-  --card: #ffffff;
-  --ink: #2c2c34;
-  --muted: #7d7f8c;
-  --accent: #00a2d4;
-  --accent-hover: #0082b1;
-  --container: 1200px;
+
+  --ice-1:#eaf6ff;
+  --ice-2:#dff5f5;
+  --ink:#2c2c34;
+  --muted:#6f7b86;
+
+  --card:#ffffff;
+  --accent:#00a2d4;
+  --accent-hover:#0082b1;
+
+  /* 🔹 add this */
+  --bg: linear-gradient(180deg, var(--ice-1), var(--ice-2) 50%, #f6f9fb 100%);
 }
+
 
 /* ===== Base (헤더 영향 안 받도록) ===== */
 body{
@@ -47,9 +72,11 @@ body{
 }
 .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); }
 
-/* ===== Subnav chips ===== */
+
 .subnav{
-  position: sticky; top: 0; z-index: 5;
+  position: sticky;
+  top: 80px;          /* match the header height you locked globally */
+  z-index: 900;       /* below header (1000), above content */
   background: rgba(255,255,255,.85);
   border-bottom: 1px solid rgba(0,0,0,.05);
   backdrop-filter: blur(8px);

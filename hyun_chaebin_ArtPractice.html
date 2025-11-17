@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <!-- CSS: 페이지 CSS → 공용 헤더 CSS (순서 중요) -->
   <link rel="stylesheet" href="hyun_chaebin_ArtPractice.css" />
@@ -34,7 +35,6 @@
           <li><a href="hyun_chaebin_ArtCommunity.html">Art &amp; Community</a></li>
           <li><a href="hyun_chaebin_Activism.html">Activism &amp; Empathy</a></li>
           <li><a href="hyun_chaebin_Sports.html">Sports</a></li>
-          <li><a href="hyun_chaebin_about.html">About</a></li>
         </ul>
       </nav>
     </div>
@@ -69,12 +69,23 @@
 
   <!-- 현재 탭 하이라이트(백업) -->
   <script>
-    (function(){
-      var file = location.pathname.split('/').pop() || 'hyun_chaebin_home.html';
-      document.querySelectorAll('.ac-header .site-nav a').forEach(function(a){
-        if (a.getAttribute('href') === file) a.setAttribute('aria-current','page');
-      });
-    })();
-  </script>
+  const slideText = document.querySelector('.hidden-slide');
+  const popPhotos = document.querySelector('.hidden-pop');
+
+  function reveal() {
+    const trigger = window.innerHeight * 0.75;
+
+    if (slideText.getBoundingClientRect().top < trigger) {
+      slideText.classList.add('reveal-slide');
+    }
+    if (popPhotos.getBoundingClientRect().top < trigger) {
+      popPhotos.classList.add('reveal-pop');
+    }
+  }
+
+  window.addEventListener('scroll', reveal);
+  reveal();
+</script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
   --radius: 18px;
   --shadow: 0 8px 18px rgba(0,0,0,.10);
   --shadow-soft: 0 6px 16px rgba(0,0,0,.08);
-  --bg: #f5f7fa;
+ --bg: linear-gradient(180deg, #eaf6ff, #dff5f5 50%, #f6f9fb 100%);
   --card: #ffffff;
   --ink: #2c2c34;
   --muted: #7d7f8c;

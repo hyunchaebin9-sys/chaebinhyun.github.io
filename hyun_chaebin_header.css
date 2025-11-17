@@ -1,223 +1,220 @@
-/* ===== TOKENS ===== */
-:root{
+/* =========================================
+   HEADER: make subpages match homepage
+   (no HTML changes)
+   ========================================= */
+
+/* If fonts aren't already loaded on this page, this will grab them */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --padX: 60px;
+  --padY: 24px;
   --gap: 18px;
-  --radius: 18px;
-  --shadow: 0 8px 18px rgba(0,0,0,.10);
-  --bg: #f5f7fa;
-  --ink: #2c2c34;
-  --accent: #00a2d4;
-  --accent-hover: #0082b1;
-  --container: 1200px;
 }
 
-/* ===== UNIFIED HEADER (hard) ===== */
-.ac-header{
-  position: sticky; top: 0; z-index: 1000;
-  background: rgba(255,255,255,.85) !important;
-  border-bottom: 1px solid rgba(0,0,0,.06) !important;
-  backdrop-filter: blur(6px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.04) !important;
-}
-.ac-header .container{ max-width: var(--container) !important; margin: 0 auto !important; padding: 0 var(--gap) !important; }
-.ac-header .bar{ display:flex !important; align-items:center !important; justify-content:space-between !important; gap:16px !important; padding:14px var(--gap) 10px !important; }
+/* 1) The bar itself */
+header,
+.ac-header,
+.nav-container {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
 
-/* Brand: Chaebin / Hyun 두 줄 고정 */
-.ac-header .brand{
-  margin:0 !important;
-  font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',serif !important;
-  font-style:italic !important; font-weight:700 !important;
-  font-size: clamp(28px, 5.5vw, 44px) !important;
-  line-height:.98 !important; letter-spacing:.2px !important;
-}
-.ac-header .brand a{ color:var(--ink) !important; text-decoration:none !important; display:inline-block !important; }
-.ac-header .brand .first{ display:block !important; }
-.ac-header .brand .last{ display:block !important; margin-top:0 !important; }
+  display: flex !important;
+  flex-wrap: nowrap !important;          /* ✅ keep brand + menu on ONE line */
+  align-items: center !important;
+  justify-content: flex-start !important;
 
-/* Nav */
-.ac-header .site-nav ul{
-  list-style:none !important; display:flex !important; flex-wrap:wrap !important;
-  gap:14px 20px !important; margin:8px 0 6px !important; padding:0 !important;
-}
-.ac-header .site-nav a{
-  font-family:'Georgia','Times New Roman',serif !important;
-  font-style:italic !important; font-weight:700 !important;
-  font-size: clamp(14px, 1.05vw, 18px) !important;
-  padding:6px 10px !important; border-radius:10px !important;
-  color:var(--ink) !important; text-decoration:none !important;
-  transition:background .2s, color .2s, transform .05s !important;
-}
-.ac-header .site-nav a:hover{ background:rgba(0,162,212,.08) !important; color:var(--accent-hover) !important; }
-.ac-header .site-nav a[aria-current="page"]{ background:rgba(0,162,212,.15) !important; color:var(--accent) !important; font-weight:800 !important; }
-.ac-header .site-nav a:active{ transform: translateY(1px) !important; }
+  padding: var(--padY) var(--padX) !important;
+  margin: 0 !important;
+  width: 100% !important;
 
-/* Legacy kill */
-header hr, .rainbow, .topbar{ display:none !important; }
-/* ===== TOKENS ===== */
-:root{
-  --gap: 18px;
-  --radius: 18px;
-  --shadow: 0 8px 18px rgba(0,0,0,.10);
-  --bg: #f5f7fa;
-  --ink: #2c2c34;
-  --accent: #00a2d4;
-  --accent-hover: #0082b1;
-  --container: 1200px;
+  background: rgba(0, 0, 0, 0.25) !important;  /* same as homepage bar */
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-/* ===== UNIFIED HEADER (hard mode) ===== */
-.ac-header{
-  position: sticky; top: 0; z-index: 1000;
-  background: rgba(255,255,255,.85) !important;
-  border-bottom: 1px solid rgba(0,0,0,.06) !important;
-  backdrop-filter: blur(6px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.04) !important;
-}
-.ac-header .container{
-  max-width: var(--container) !important;
-  margin: 0 auto !important;
-  padding: 0 var(--gap) !important;
-}
-.ac-header .bar{
-  display:flex !important; align-items:center !important; justify-content:space-between !important;
-  gap:16px !important; padding:14px var(--gap) 10px !important;
+/* Nuke inner wrappers that try to center/squeeze it */
+header .container,
+.ac-header .container,
+.nav-container .container,
+header .bar,
+.ac-header .bar {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* Brand: Chaebin / Hyun 두 줄 고정 */
-.ac-header .brand{
-  margin:0 !important;
-  font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',serif !important;
-  font-style:italic !important; font-weight:700 !important;
-  font-size: clamp(28px, 5.5vw, 44px) !important;
-  line-height:.98 !important; letter-spacing:.2px !important;
+/* 2) Brand (left) – same as homepage */
+header .brand,
+.ac-header .brand,
+.nav-container .brand,
+header h1.brand,
+.ac-header h1.brand,
+.nav-container h1.brand {
+  margin: 0 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  flex: 0 0 auto !important;
+
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+  font-size: 30px !important;
 }
-.ac-header .brand a{ color:var(--ink) !important; text-decoration:none !important; display:inline-block !important; }
 
-/* ===== HOTFIX: force header layout against page overrides ===== */
-html, body{ margin:0 !important; }                 /* 상단 흰 여백 제거 */
-.ac-header{ display:block !important; }
-.ac-header nav{ display:block !important; }
+header .brand a,
+.ac-header .brand a,
+.nav-container .brand a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
 
-/* 어떤 페이지 CSS가 nav/ul/li를 바꿔도, 헤더 안에서는 가로 정렬을 강제 */
+/* 3) Nav container itself – push it to the RIGHT */
+header nav,
+.ac-header nav,
+.ac-header .site-nav,
+.nav-container nav {
+  margin-left: auto !important;          /* ✅ moves menu to the right */
+  flex: 0 1 auto !important;
+}
+
+/* 4) Nav list – horizontal with gap */
+header nav ul,
+.ac-header nav ul,
 .ac-header .site-nav ul,
-.ac-header nav ul{
-  display:flex !important;
-  flex-wrap:wrap !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  gap:14px 20px !important;
-  margin:8px 0 6px !important;
-  padding:0 !important;
-  list-style:none !important;
+.nav-container nav ul {
+  list-style: none !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: var(--gap) !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
+header nav li,
+.ac-header nav li,
 .ac-header .site-nav li,
-.ac-header nav li{
-  display:inline-flex !important;
-  margin:0 !important;
-  padding:0 !important;
-  list-style:none !important;
+.nav-container nav li {
+  display: inline-flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
+/* 5) Links – force exact homepage font + pills */
+header nav a,
+.ac-header nav a,
 .ac-header .site-nav a,
-.ac-header nav a{
-  display:inline-block !important;
-  text-decoration:none !important;
+.nav-container nav a {
+  display: inline-block !important;
+
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14.5px !important;
+  line-height: 1.1 !important;
+
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+
+  transition: background 0.3s ease, color 0.3s ease !important;
 }
 
-/* 페이지에서 header h1/nav/ul에 강한 규칙이 있어도 헤더 안에선 무효화 */
-.ac-header header,            /* 혹시 중첩된 header가 있어도 */
-.ac-header header *, 
-.ac-header nav *, 
-.ac-header .site-nav *{
-  box-sizing:border-box !important;
+header nav a:hover,
+.ac-header nav a:hover,
+.ac-header .site-nav a:hover,
+.nav-container nav a:hover,
+header nav a.active,
+.ac-header nav a.active,
+.ac-header .site-nav a.active,
+.nav-container nav a.active,
+header nav a[aria-current="page"],
+.ac-header .site-nav a[aria-current="page"],
+.nav-container nav a[aria-current="page"] {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* ======= Reset (헤더 깨짐 방지) ======= */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration: none; }
-
-/* 이전 테마 잔재 제거 */
-.topbar, .rainbow, header hr { display: none !important; }
-
-/* ======= Design tokens ======= */
-:root{
-  --container: 1200px;
-  --gap: 18px;
-  --ink: #17333a;
-  --ink-soft:#324a50;
-  --bg-head: rgba(255,255,255,.85);
-  --border: rgba(0,0,0,.06);
-  --hover: rgba(0,0,0,.05);
-  --active: rgba(0,0,0,.07);
-  --accent:#00a2d4;
-  --accent-hover:#0082b1;
+/* 6) Remove legacy header bits */
+.topbar,
+.rainbow,
+header hr {
+  display: none !important;
 }
 
-/* ======= Unified Header ======= */
-.ac-header{
-  position: sticky; top: 0; z-index: 1000;
-  background: var(--bg-head);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-.ac-header .container{
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--gap);
-}
-.ac-header .bar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px var(--gap) 10px;
+/* 7) Responsive tweaks */
+@media (max-width: 1000px) {
+  :root { --padX: 30px; }
 }
 
-/* 브랜드 (두 줄 고정) */
-.ac-header .brand{
-  margin: 0;
-  line-height: 1.05;
-  font-style: italic;
-  font-family: 'Gill Sans','Gill Sans MT', Calibri, 'Trebuchet MS', serif;
-  font-weight: 700;
-  letter-spacing: .2px;
-  font-size: clamp(28px, 5.5vw, 44px);
+@media (max-width: 600px) {
+  header .brand,
+  .ac-header .brand,
+  .nav-container .brand {
+    font-size: 22px !important;
+  }
 }
-.ac-header .brand .first{ display:block; }
-.ac-header .brand .last{ display:block; margin-top: 2px; }
-.ac-header .brand a{ color: var(--ink); }
+/* --- FINAL OVERRIDE: make subpage header = homepage --- */
 
-/* 네비게이션 */
-.ac-header .site-nav ul{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 20px;
-  margin: 8px 0 6px;
-  padding: 0;
-  list-style: none;
+header,
+.ac-header,
+.nav-container {
+  padding: 24px 60px !important;   /* same as homepage .nav-container */
 }
-.ac-header .site-nav a{
-  display: inline-block;
-  font-family: 'Georgia','Times New Roman',serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: clamp(14px, 1.05vw, 18px);
-  padding: 6px 10px;
-  border-radius: 10px;
-  color: var(--ink);
-  transition: background .2s, color .2s, transform .05s;
-}
-.ac-header .site-nav a:hover{
-  background: var(--hover);
-  color: var(--accent-hover);
-}
-.ac-header .site-nav a[aria-current="page"]{
-  background: var(--active);
-  color: var(--accent);
-}
-.ac-header .site-nav a:active{ transform: translateY(1px); }
 
-/* 모바일 살짝 타이트 */
-@media (max-width: 560px){
-  .ac-header .site-nav a{ font-size: 15px; padding: 6px 8px; }
+/* match homepage pill size + text size */
+header nav a,
+.ac-header nav a,
+.ac-header .site-nav a,
+.nav-container nav a {
+  font-size: 16px !important;      /* bump from 14.5 → 16 like home */
+  line-height: 1.2 !important;     /* a bit taller, like default text */
+  padding: 6px 10px !important;    /* same as homepage */
+}
+/* ===== HARD LOCK: make subpage header same thickness as home ===== */
+
+/* 1. Fix the bar height explicitly */
+header,
+.ac-header,
+.nav-container {
+  height: 87px !important;          /* <- tweak 76–84 until it looks EXACTLY like home */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 2. Vertically center everything inside the bar */
+header .container,
+.ac-header .container,
+.nav-container .container,
+header .brand,
+.ac-header .brand,
+.nav-container .brand,
+header nav,
+.ac-header nav,
+.ac-header .site-nav,
+.nav-container nav {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 3. Force nav text size so it can't be smaller than home */
+header nav a,
+.ac-header nav a,
+.ac-header .site-nav a,
+.nav-container nav a {
+  font-size: 16px !important;       /* bump this up/down if you want */
+  line-height: 1.2 !important;
+  padding: 6px 10px !important;     /* keep pill height consistent */
 }
