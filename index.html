@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="hyun_chaebin_home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="home-page">
@@ -24,7 +23,6 @@
           <li><a href="hyun_chaebin_ArtCommunity.html">Art & Community</a></li>
           <li><a href="hyun_chaebin_Activism.html">Activism & Empathy</a></li>
           <li><a href="hyun_chaebin_Sports.html">Sports</a></li>
-      
         </ul>
       </nav>
     </div>
@@ -38,21 +36,52 @@
     </section>
   </header>
 
-  <main class="masonry-gallery">
-    <div class="gallery">
-      <img src="1. Chaebin Hyun - Familiar yet Unfamiliar.jpg" alt="Familiar yet Unfamiliar">
-      <img src="3. Chaebin Hyun - Who am I (1).jpeg" alt="Who am I">
-      <img src="9.  Chaebin Hyun - All animals are sentient.jpg" alt="All Animals Are Sentient">
-      <img src="10. Chaebin Hyun - Unfamiliar Beauty.jpg" alt="Unfamiliar Beauty">
-      <img src="12. Chaebin Hyun  - Movement of Melody .jpg" alt="Movement of Melody">
-      <img src="15. Chaebin Hyun  - Traditional Modernity.jpg" alt="Traditional Modernity">
-      <img src="16.  Chaebin Hyun - Urban Escape.jpg" alt="Urban Escape">
-      <img src="KakaoTalk_Photo_2025-10-25-13-30-09 004.jpeg" alt="Portrait Study">
+  <!-- FIXED INTRO SECTION -->
+  <section class="intro-section">
+    <div class="intro-left hidden-slide">
+      <h1>Hello, I’m Chaebin.</h1>
+      <p>
+        I love exploring ideas through art, design, and writing. I want to create works that connects people 
+        and opens conversations about empathy, community, and social change. 
+      </p>
+      <p>This portfolio is a look at the world through my eyes.</p>
     </div>
-  </main>
+
+    <div class="intro-right hidden-pop">
+      <div class="photo-col">
+        <img src="IMG_7086.JPG" class="pic" alt="Chaebin portrait">
+        <img src="IMG_3189.JPG" class="pic" alt="Chaebin childhood photo">
+      </div>
+
+      <div class="photo-col offset">
+        <img src="IMG_6717.jpeg" class="pic" alt="Chaebin standing beside a painting">
+        <img src="IMG_6806.JPG" class="pic" alt="Standing on the streets">
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Chaebin Hyun</p>
   </footer>
+
+<script>
+  const slide = document.querySelector('.hidden-slide');
+  const pop = document.querySelector('.hidden-pop');
+
+  const revealOnScroll = () => {
+    const trigger = window.innerHeight * 0.75;
+
+    if (slide.getBoundingClientRect().top < trigger) {
+      slide.classList.add('reveal-slide');
+    }
+    if (pop.getBoundingClientRect().top < trigger) {
+      pop.classList.add('reveal-pop');
+    }
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
+
 </body>
 </html>
